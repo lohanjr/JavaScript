@@ -7,13 +7,10 @@ No editor de códigos de sua preferência (irei usar como base o Visual Studio C
 ```javascript
 <body>
     <script>
-        código vai aqui!
+        // código vai aqui!
     </script>
 </body>
 ```
-
-![script no head](imgs\scriptDentroDoBody.png)
-
 2ª- Também no arquivo _index.html_, utilizar um link dentro do _head_ direcionado à um novo
 arquivo _script.js_, e lá inserindo seus comandos em JavaScript, deixando o código mais organizado e limpo (sendo a maneira mais indicada), por exemplo:
 ```javascript

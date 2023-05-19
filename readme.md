@@ -48,18 +48,18 @@ Existem 3 tipos de variáveis para a declaração de atribuições no JS. Sendo 
 ### - Escopo Global
 É o mais amplo, variáveis declaradas no global são visíveis em todo o código (somente _var_ é também visível no global do navegador).<br>Como exemplo vamos declarar uma variável:
 
-![window variable](imgs\varNoGlobalWindowConsole.png)
+![window variable](imgs/varNoGlobalWindowConsole.png)
 
 Ao abrir o console e digitarmos _window_, podemos ver que o _age = 22_ está lá!
 
 ### - Escopo Local
 Se refere à um escopo delimitado dentro de uma função, variáveis criadas dentro delas não podem ser acessadas fora desse escopo. O que permite a criação de variáveis com o mesmo nome!
 
-![local escope](imgs\escopoLocalVariaveis.png)
+![local escope](imgs/escopoLocalVariaveis.png)
 
 Agora vamos tentar chamar a variável de fora da _function:_
 
-![is not defined error](imgs\isNotDefinedERROR.png)
+![is not defined error](imgs/isNotDefinedERROR.png)
 
 Percebemos no aviso de erro que a variável aparece como não definida, pois não é possível acessá-los em ambos (_let_ ou _var_) os casos.
 
@@ -68,11 +68,11 @@ Percebemos no aviso de erro que a variável aparece como não definida, pois nã
 
 > _PS:_ Por algum motivo o JS aceita códigos somente entre chaves.
 
-![bloco escope ok](imgs\letAndVarOkBloco.png)
+![bloco escope ok](imgs/letAndVarOkBloco.png)
 
 Agora vamos tentar chamar essas variáveis de fora da função...
 
-![var ok, let error](imgs\letUndefinedVarOk.png)
+![var ok, let error](imgs/letUndefinedVarOk.png)
 
 O _let_ é limitado a ser chamado somente dentro do bloco, já o _var_ é acessível fora dele, pois são içadas (_hoisting_) para o topo do escopo externo do bloco, veremos mais detalhes na descrição da palavra-chave _VAR_ abaixo.
 

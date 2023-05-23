@@ -23,6 +23,8 @@ arquivo _script.js_, e lá inserindo seus comandos em JavaScript, deixando o có
 
 > Atalho: Ctrl + click -> clicando no _script.js_, automaticamente irá criar o tipo de arquivo escrito.
 
+---
+
 ## - `Console`
 O console é uma ferramenta existente tanto no navegador quanto no editor de código, que nos exibe informações, erros e é bastante utilizada para testes.
 
@@ -40,10 +42,13 @@ console.log('testando...')
 
 Como podemos ver, o teste retornou certinho.
 
+---
 
 ## Variáveis
 
 Existem 3 tipos de variáveis para a declaração de atribuições no JS. Sendo elas: **var**, **let** e **const**. E para tratarmos desse assunto, devemos falar do _ESCOPO_, que se refere a visibilidade e acessibilidade de variáveis e outros...<br>O escopo define as áreas onde essas entidades são válidas.
+
+---
 
 ### - Escopo Global
 É o mais amplo, variáveis declaradas no global são visíveis em todo o código (somente _var_ é também visível no global do navegador).<br>Como exemplo vamos declarar uma variável:
@@ -51,6 +56,8 @@ Existem 3 tipos de variáveis para a declaração de atribuições no JS. Sendo 
 ![window variable](imgs/varNoGlobalWindowConsole.png)
 
 Ao abrir o console e digitarmos _window_, podemos ver que o _age = 22_ está lá!
+
+---
 
 ### - Escopo Local
 Se refere à um escopo delimitado dentro de uma função, variáveis criadas dentro delas não podem ser acessadas fora desse escopo. O que permite a criação de variáveis com o mesmo nome!
@@ -62,6 +69,8 @@ Agora vamos tentar chamar a variável de fora da _function:_
 ![is not defined error](imgs/isNotDefinedERROR.png)
 
 Percebemos no aviso de erro que a variável aparece como não definida, pois não é possível acessá-los em ambos (_let_ ou _var_) os casos.
+
+---
 
 ### - Escopo em Bloco
 É caracterizado quando o pedaço de código está entre chaves `{}`, seja num _else_, num _do_ etc. Vejamos:
@@ -84,105 +93,114 @@ O _let_ é limitado a ser chamado somente dentro do bloco, já o _var_ é acess�
 
 ---
 
-* _CONST:_ Depois de declarada sua atribuição não é permitido a alteração da mesma, por isso do nome.
+* _CONST:_ Escopo global _(do arquivo .js)_, local e em bloco.<br>- Depois de declarada sua atribuição, não é permitido a alteração da mesma, por isso o nome.<br>- Compartilha o comportamento do _let_, também não são içadas para o topo do escopo.
+
+![const error](imgs/comportamentoConst.png)
+
+> _PS:_ Ao tentar redeclarar o valor da const, o console nos envia um erro.
+
+---
+
+## Tipos de Dados
+
+Na versão atual, existem sete tipos de dados, eles são:
+### - String
+```javascript
+let username = 'JuninhoDaRua12';
+```
+O retorno dessa variável será do tipo _string_, nela podem haver caracteres especiais, números, letras, espaços e pontuações.
+
+---
+
+### - Boolean
+```javascript
+let luzDoQuarto = false;
+```
+Nesse tipo, temos ou _true_ ou _false_.
+
+---
+
+### - Number
+```javascript
+let idade = 22;
+```
+Tipo que armazena números apenas.
+
+---
+
+### - undefined
+```javascript
+    let receberPagamento ;
+    console.log(receberPagamento);
+> undefined
+```
+ou
+```javascript
+    console.log(receberPagamento);
+    var receberPagamento = 100;
+> undefined
+```
+> _PS:_ Esse segundo caso acontece pelo _hoisting._
+
+O tipo _undefined_ é quando não temos um valor atribuído à variável.
+
+---
+
+### - null
+```javascript
+let primeiraInscricao = null;
+```
+No tipo _null_ existe um valor 'vazio' na variável. Diferente do _undefined_, que não há valor algum definido.
+
+---
 
 ## Operadores
 
-Operadores são símbolos que executam uma operação matemática ou lógica. Para esse módulo, iremos utilizar o terminal do _node.js_, para visualizarmos todo o desenrolar lógico.
+Operadores são símbolos que executam uma operação matemática ou lógica. Para esse módulo, iremos utilizar a extensão **_Live Preview,_** para utilizarmos o console do navegador sem precisarmos recarregá-lo manualmente.
 
-Abrir console do node.js _ctrl + '_
-
-```javascript
-let x = 5
-
-    x + 2 = 7 (adição)
-    x - 2 = 3 (subtração)
-    x * 2 = 10 (multiplicação)
-    x / 2 = 2.5 (divisão)
-    x % 2 = 1 (resto da divisão inteira)
-    x ** 2 = 25 (ao quadrado)
-```
+---
 
 ## Precedência de operações
 
-    ()
-    **
-    * / %
-    + -
+Numa operação matemática onde existem muitas operações, é seguido uma sequência:<br>1° _entre parênteses_ `()`<br>2° _exponencial_ `**`<br>3° _multiplicação_ `*` e _divisão_ `/` (da esquerda pra direita).<br>4° _adição_ `+` e _subtração_ `-` (também da esquerda pra direita.)
 
 ## Autoatribuições
+```javascript
+let x = 10;
 
-    var x = 10
+x -= 2; // 8 (subtrai)
+x += 2; // 12 (adiciona)
+x *= 2; // 20 (multiplica)
+x /= 2; // 5 (divide)
+x **= 2; // 100 (quadrado)
+x %= 2; // 0 (resto int)
+```
 
-    var x -= 2 subtrai > 8
-    var x += 2 adiciona > 12
-    var x *= 2 multiplica > 20
-    var x /= 2 divide > 5
-    var x **= 2 quadrado > 100
-    var x %= 2 resto int > 0
+---
 
 ## Atalho
+```javascript
+let y = 50;
 
-    x++ > 11 executa a conta, mas mostra somente depois
-    ++x > 11 executa e já mostra a conta
-    --x > 9 executa e já mostra a conta
-    x-- > 9 executa a conta, mas mostra somente depois
+y++ > 50 // executa a conta, mas mostra somente depois
+++y > 51 // executa e já mostra a conta
+--y > 49 // executa e já mostra a conta
+y-- > 50 // executa a conta, mas mostra somente depois
+```
+Veja os exemplos abaixo:
+![exemplo de atalho ++x](imgs/++xExample.png)
+Vemos que o incremento foi calculado antes da impressão no console, pois o atalho foi colocado antes da variável.
+![x-- exemplo](imgs/x--Example.png)
+Nesse caso, foi preciso chamar a variável uma segunda vez para vermos o cálculo final do decremento.
+
+---
 
 ## Operadores Relacionais
-
-    > maior
-    < menor
-    == igual
-    >= maior ou igual
-    <= menor ou igual
-    != diferente
-
-## Identidade
-
-    5 === '5' false
-    5 === 5 true
-
-    var a = 1
-    var b = '1'
-
-    a != b false
-    a !== b true
-
-## Lógicos
-
-    ! - negação unário
-    false > true
-    true > false
-
-    && - conjunção binário
-    true true > true
-    true false > false
-    false false > false
-    false true > false
-
-    || - disjunção binário
-    true true > true
-    true false > true
-    false false > false
-    false true > true
-
-Quando se tem operadores aritméticos, relacionais e lógicos numa mesma expressão, essa é a ordem de calculo:
-
-    1º aritméticos - 2º relacionais - 3º lógicos.
-    ex:
-    var a = 5
-    var b = 8
-
-    a > b && b % 2 == 0
-    false
-
-Caso numa mesma expressão houver &&, || e !<br>A ordem correta será: 1º ! - 2º && - 3º ||
-
-## Ternário
-
-    teste ? true : false
-    ex: média da disciplina é >= 6 ? "Aprovado" : "Reprovado"
-
-    média = 6
-    var aprovacao = média >= 6 ? 'Aprovado' : 'Reprovado'
-    aprovacao == 'Aprovado'
+```javascript
+> // maior
+< // menor
+== // igual
+>= // maior ou igual
+<= // menor ou igual
+!= // diferente
+```

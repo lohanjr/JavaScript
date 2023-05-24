@@ -188,9 +188,13 @@ y++ > 50 // executa a conta, mas mostra somente depois
 y-- > 50 // executa a conta, mas mostra somente depois
 ```
 Veja os exemplos abaixo:
+
 ![exemplo de atalho ++x](imgs/++xExample.png)
+
 Vemos que o incremento foi calculado antes da impressão no console, pois o atalho foi colocado antes da variável.
+
 ![x-- exemplo](imgs/x--Example.png)
+
 Nesse caso, foi preciso chamar a variável uma segunda vez para vermos o cálculo final do decremento.
 
 ---
@@ -204,3 +208,24 @@ Nesse caso, foi preciso chamar a variável uma segunda vez para vermos o cálcul
 <= // menor ou igual
 != // diferente
 ```
+
+---
+
+## - Operadores de Identidade
+### - Igualdade estrita:
+Além da comparação dos valores, existe a comparação do tipo.
+```javascript
+    console.log(5 === 5);
+> true
+    console.log(5 === '5');
+> false
+```
+### Igualdade solta:
+Faz a comparação apenas dos valores declarados.
+```javascript
+    console.log(2023 == 2023);
+> true
+    console.log(2023 == '2023');
+> true
+```
+Não sendo recomendado para utilização, pois não faz uma comparação integral de valores.

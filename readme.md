@@ -3,7 +3,7 @@
 O JavaScript(JS) é uma linguagem de programação dinâmica que nos fornece diversas funcionalidades, juntamente com o HTML e CSS.
 No editor de códigos de sua preferência (irei usar como base o Visual Studio Code), você irá conseguir utilizar o JS de 2 maneiras:
 
-1ª- No arquivo _index.html_, basta criar dentro da tag _body_, uma tag _script_, dessa maneira:
+**1ª**- No arquivo _index.html_, basta criar dentro da tag _body_, uma tag _script_, dessa maneira:
 ```javascript
 <body>
     <script>
@@ -11,7 +11,7 @@ No editor de códigos de sua preferência (irei usar como base o Visual Studio C
     </script>
 </body>
 ```
-2ª- Também no arquivo _index.html_, utilizar um link dentro do _head_ direcionado à um novo
+**2ª**- Também no arquivo _index.html_, utilizar um link dentro do _head_ direcionado à um novo
 arquivo _script.js_, e lá inserindo seus comandos em JavaScript, deixando o código mais organizado e limpo (sendo a maneira mais indicada), por exemplo:
 ```javascript
 <head>
@@ -25,10 +25,10 @@ arquivo _script.js_, e lá inserindo seus comandos em JavaScript, deixando o có
 
 ---
 
-## - `Console`
+## `Console`
 O console é uma ferramenta existente tanto no navegador quanto no editor de código, que nos exibe informações, erros e é bastante utilizada para testes.
 
-* Em falar em console, devemos falar também do _log_, um método que é usado para exibir mensagens. Para isso, copie o caminho do seu arquivo _index.html_ e cole no navegador de sua preferência.
+Em falar em console, devemos falar também do _log_, um método que é usado para exibir mensagens. Para isso, copie o caminho do seu arquivo _index.html_ e cole no navegador de sua preferência.
 
 ![path do index](imgs/pathIndex.png)
 
@@ -42,13 +42,9 @@ console.log('testando...')
 
 Como podemos ver, o teste retornou certinho.
 
----
-
-## Variáveis
+# Variáveis
 
 Existem 3 tipos de variáveis para a declaração de atribuições no JS. Sendo elas: **var**, **let** e **const**. E para tratarmos desse assunto, devemos falar do _ESCOPO_, que se refere a visibilidade e acessibilidade de variáveis e outros...<br>O escopo define as áreas onde essas entidades são válidas.
-
----
 
 ### - Escopo Global
 É o mais amplo, variáveis declaradas no global são visíveis em todo o código (somente _var_ é também visível no global do navegador).<br>Como exemplo vamos declarar uma variável:
@@ -99,9 +95,7 @@ O _let_ é limitado a ser chamado somente dentro do bloco, já o _var_ é acess�
 
 > _PS:_ Ao tentar redeclarar o valor da const, o console nos envia um erro.
 
----
-
-## Tipos de Dados
+# Tipos de Dados
 
 Na versão atual, existem sete tipos de dados, eles são:
 ### - String
@@ -152,17 +146,15 @@ let primeiraInscricao = null;
 ```
 No tipo _null_ existe um valor 'vazio' na variável. Diferente do _undefined_, que não há valor algum definido.
 
----
-
-## Operadores
+# Operadores
 
 Operadores são símbolos que executam uma operação matemática ou lógica. Para esse módulo, iremos utilizar a extensão **_Live Preview,_** para utilizarmos o console do navegador sem precisarmos recarregá-lo manualmente.
-
----
 
 ## Precedência de operações
 
 Numa operação matemática onde existem muitas operações, é seguido uma sequência:<br>1° _entre parênteses_ `()`<br>2° _exponencial_ `**`<br>3° _multiplicação_ `*` e _divisão_ `/` (da esquerda pra direita).<br>4° _adição_ `+` e _subtração_ `-` (também da esquerda pra direita.)
+
+---
 
 ## Autoatribuições
 ```javascript
@@ -211,7 +203,7 @@ Nesse caso, foi preciso chamar a variável uma segunda vez para vermos o cálcul
 
 ---
 
-## - Operadores de Identidade
+## Operadores de Identidade
 ### - Igualdade estrita:
 Além da comparação dos valores, existe a comparação do tipo.
 ```javascript
@@ -220,7 +212,7 @@ Além da comparação dos valores, existe a comparação do tipo.
     console.log(5 === '5');
 > false
 ```
-### Igualdade solta:
+### - Igualdade solta:
 Faz a comparação apenas dos valores declarados.
 ```javascript
     console.log(2023 == 2023);
@@ -229,3 +221,63 @@ Faz a comparação apenas dos valores declarados.
 > true
 ```
 Não sendo recomendado para utilização, pois não faz uma comparação integral de valores.
+### - Desigualdade:
+Verifica se os dois operandos não são iguais, retornando resultado booleano.<br>Não leva em conta tipos.
+```javascript
+    console.log(2023 != '2023');
+> false
+```
+### - Desigualdade estrita:
+Verifica se os dois operandos não são iguais, retornando resultado booleano.<br>Leva em conta tipos.
+```javascript
+    console.log(2023 !== '2023');
+> true
+```
+
+---
+
+## Ternário
+Muito útil para fazer comparações e se livrar de tantos _if_ para isso, sendo mais eficiente.<br>Sua nomenclatura se dá assim: `teste ? true : false`, vejamos...
+```javascript
+    let média = 8.5;
+
+    let aprovação = média >= 6 ? 'Aprovado' : 'Reprovado';
+> Aprovado
+```
+Perceba que pelo fato da variável 'média' ser maior ou igual a 6, o resultado do teste é _true._
+
+---
+
+## Operadores Lógicos
+### - `&&` (AND) Conjunção Binário
+
+O resultado retorna `true` somente se ambos forem `true`.
+```javascript
+    let brasileiro = true;
+    let maiorDeIdade = true;
+
+    let vagaDeEmprego = brasileiro && maiorDeIdade;
+> true
+```
+### - `||` (OR) Disjunção Binário
+
+O resultado retorna `true` se um, ou os dois operandos forem `true`, sendo o único retorno como `false` quando ambos são `false`.<br>Vejamos:
+```javascript
+    let criança = false;
+    let menosDe60kg = false;
+
+    let entradaPulPula = criança || menosDe60kg;
+> false
+```
+### - `!` (NOT) Negação Unário
+
+Muda o valor que a expressão retornou.
+```javascript
+    let nome = "Joaquim";
+
+    if(!(nome == "Iago")){
+        console.log(nome);
+    }
+> Joaquim
+```
+No exemplo temos _'(nome == "Iago")'_ como `true` mas pelo fato de o `!` se encontrar na frente da expressão entre parênteses, o valor retornado é "Joaquim" (`false`).

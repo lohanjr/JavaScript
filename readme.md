@@ -281,3 +281,46 @@ Muda o valor que a expressão retornou.
 > Joaquim
 ```
 No exemplo temos _'(nome == "Iago")'_ como `true` mas pelo fato de o `!` se encontrar na frente da expressão entre parênteses, o valor retornado é "Joaquim" (`false`).
+
+---
+
+### Comparação não booleanas
+Dentro desse assunto, temos dois grupos.<br>**Falsy:**
+- `undefined`
+- `null`
+- `''`
+- `0`
+- `false`
+- `NaN`
+
+**Truty:** Engloba todos os tipos e valores que não estão presentes no _Falsy_.
+
+```javascript
+    false || 1
+> 1
+```
+Outro exemplo:
+```javascript
+   let mochila = '';
+   let casaco = 'preto';
+   let shorts = 'azul';
+
+> mochila || casaco || shorts
+> casaco
+```
+O exemplo acima acontece pois a comparação não booleana busca o primeiro valor _Truty_. Sendo assim, seguindo a lógica da esquerda pra direita, a variável _casaco_.
+
+## Condionais
+### - `if else`
+Esse condicional é implementada, para executar ações que irão ocorrer se determinada condição for verdadeira ou não.<br>Vejamos um exemplo, onde iremos simular a portaria de uma casa de show que comercializa bebidas alcólicas, onde menores de 18 não podem entrar.
+```javascript
+    let idadeDaMariazinha = 21;
+
+    if(idadeDaMariazinha < 18){
+        console.log("Você não poderá entrar nesse estabelecimento");
+    }else{
+        console.log("Aproveite a noite!");
+    }
+
+> Aproveite a noite!
+``` 

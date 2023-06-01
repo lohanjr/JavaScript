@@ -126,13 +126,13 @@ Tipo que armazena números apenas.
 ```javascript
     let receberPagamento ;
     console.log(receberPagamento);
-> undefined
+// > undefined
 ```
 ou
 ```javascript
     console.log(receberPagamento);
     var receberPagamento = 100;
-> undefined
+// > undefined
 ```
 > _PS:_ Esse segundo caso acontece pelo _hoisting._
 
@@ -208,30 +208,34 @@ Nesse caso, foi preciso chamar a variável uma segunda vez para vermos o cálcul
 Além da comparação dos valores, existe a comparação do tipo.
 ```javascript
     console.log(5 === 5);
-> true
+// > true
+```
+```javascript
     console.log(5 === '5');
-> false
+// > false
 ```
 ### - Igualdade solta:
 Faz a comparação apenas dos valores declarados.
 ```javascript
     console.log(2023 == 2023);
-> true
+// > true
+```
+```javascript
     console.log(2023 == '2023');
-> true
+// > true
 ```
 Não sendo recomendado para utilização, pois não faz uma comparação integral de valores.
 ### - Desigualdade:
 Verifica se os dois operandos não são iguais, retornando resultado booleano.<br>Não leva em conta tipos.
 ```javascript
     console.log(2023 != '2023');
-> false
+// > false
 ```
 ### - Desigualdade estrita:
 Verifica se os dois operandos não são iguais, retornando resultado booleano.<br>Leva em conta tipos.
 ```javascript
     console.log(2023 !== '2023');
-> true
+// > true
 ```
 
 ---
@@ -242,7 +246,7 @@ Muito útil para fazer comparações e se livrar de tantos _if_ para isso, sendo
     let média = 8.5;
 
     let aprovação = média >= 6 ? 'Aprovado' : 'Reprovado';
-> Aprovado
+// > Aprovado
 ```
 Perceba que pelo fato da variável 'média' ser maior ou igual a 6, o resultado do teste é _true._
 
@@ -257,7 +261,7 @@ O resultado retorna `true` somente se ambos forem `true`.
     let maiorDeIdade = true;
 
     let vagaDeEmprego = brasileiro && maiorDeIdade;
-> true
+// > true
 ```
 ### - `||` (OR) Disjunção Binário
 
@@ -267,7 +271,7 @@ O resultado retorna `true` se um, ou os dois operandos forem `true`, sendo o ún
     let menosDe60kg = false;
 
     let entradaPulPula = criança || menosDe60kg;
-> false
+// > false
 ```
 ### - `!` (NOT) Negação Unário
 
@@ -278,7 +282,7 @@ Muda o valor que a expressão retornou.
     if(!(nome == "Iago")){
         console.log(nome);
     }
-> Joaquim
+// > Joaquim
 ```
 No exemplo temos _'(nome == "Iago")'_ como `true` mas pelo fato de o `!` se encontrar na frente da expressão entre parênteses, o valor retornado é "Joaquim" (`false`).
 
@@ -297,7 +301,7 @@ Dentro desse assunto, temos dois grupos.<br>**Falsy:**
 
 ```javascript
     false || 1
-> 1
+// > 1
 ```
 Outro exemplo:
 ```javascript
@@ -305,14 +309,14 @@ Outro exemplo:
    let casaco = 'preto';
    let shorts = 'azul';
 
-> mochila || casaco || shorts
-> casaco
+// > mochila || casaco || shorts
+// > casaco
 ```
 O exemplo acima acontece pois a comparação não booleana busca o primeiro valor _Truty_. Sendo assim, seguindo a lógica da esquerda pra direita, a variável _casaco_.
 
-## Condionais
+# Condicionais
 ### - `if else`
-Esse condicional é implementada, para executar ações que irão ocorrer se determinada condição for verdadeira ou não.<br>Vejamos um exemplo, onde iremos simular a portaria de uma casa de show que comercializa bebidas alcólicas, onde menores de 18 não podem entrar.
+Essa condicional é implementada, para executar ações que irão ocorrer se determinada condição for verdadeira ou não.<br>Vejamos um exemplo, onde iremos simular a portaria de uma casa de show que comercializa bebidas alcólicas, onde menores de 18 não podem entrar.
 ```javascript
     let idadeDaMariazinha = 21;
 
@@ -323,4 +327,81 @@ Esse condicional é implementada, para executar ações que irão ocorrer se det
     }
 
 > Aproveite a noite!
-``` 
+```
+### - `switch case`
+Condicional que em cada caso em específico, executa uma ação para ela, se não, é executado uma ação `default` ou padrão.<br>Vejamos:
+```javascript
+    let classificacaoFinal = 3;
+
+    switch(classificacaoFinal){
+        case 1:
+            console.log("1º Lugar");
+            break;
+        case 2:
+            console.log("2º Lugar");
+            break;
+        case 3:
+            console.log("3º Lugar");
+            break;
+        default:
+        console.log("Não pegou pódio!");
+            break;
+    }
+
+// > 3º Lugar
+```
+
+# Loops
+
+## - `for`
+```javascript
+    for(let index = 1; index <= 3 ; index ++){
+        console.log(index + "º número");
+    }
+// > 1º número
+// > 2º número
+// > 3º número
+```
+Primeiro declaramos o valor da váriavel (`let index = 1`), depois damos a condição para iterar o looping(`index <=3`), depois deve ser declarada a expressão de incremento(`index ++`). E por último, a ação desejada(`console.log(index + "º número")`).
+
+## - `While`
+```javascript
+    let i = 1;
+
+    while(i <= 3){
+        console.log(i + "º número");
+        i++;
+    }
+
+// > 1º número
+// > 2º número
+// > 3º número
+```
+Podemos perceber uma diferença, que é a declaração da variável fora do laço _while._
+
+## - `do while`
+```javascript
+    let chamadaDeAula = 1;
+        do{
+            console.log("aluno nº " + chamadaDeAula + " está presente?");
+            chamadaDeAula++;
+        } while(chamadaDeAula <= 4)
+
+// > aluno nº 1 está presente?
+// > aluno nº 2 está presente?
+// > aluno nº 3 está presente?
+// > aluno nº 4 está presente?
+```
+## - `for in`
+```javascript
+let pessoa = {
+    nome: 'Lohan',
+    nacionalidade: 'Brasileiro'
+}
+for(let chave in pessoa){
+    console.log(chave);
+}
+// > nome
+// > pessoa
+```
+Esse laço é mais utilizado em blocos e arrays. No exemplo, criamos um bloco _pessoa_, onde seus _key: value_ estão presentes.<br>Podemos acessá-los facilmente com o _for in._ A variável _chave_ está buscando a(s) propriedade(s) do bloco.

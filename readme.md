@@ -416,7 +416,7 @@ Assim, esse laço é mais utilizado em blocos/objetos. No exemplo, criamos um bl
 ## - `for of`
 ```javascript
     let pacientes = ['Letícia', 'André', 'João', 'César'];
-    for(index of pacientes){
+    for(let index of pacientes){
         console.log(index);
     }
 // > Letícia

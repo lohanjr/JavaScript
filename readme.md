@@ -364,7 +364,7 @@ Condicional que em cada caso em específico, executa uma ação para ela, se nã
 ```
 Primeiro declaramos o valor da váriavel (`let index = 1`), depois damos a condição para iterar o looping(`index <=3`), depois deve ser declarada a expressão de incremento(`index ++`). E por último, a ação desejada(`console.log(index + "º número")`).
 
-## - `While`
+## - `while`
 ```javascript
     let i = 1;
 
@@ -404,4 +404,24 @@ for(let chave in pessoa){
 // > nome
 // > pessoa
 ```
-Esse laço é mais utilizado em blocos e arrays. No exemplo, criamos um bloco _pessoa_, onde seus _key: value_ estão presentes.<br>Podemos acessá-los facilmente com o _for in._ A variável _chave_ está buscando a(s) propriedade(s) do bloco.
+Agora, e se quisermos verificar o valor da propriedade? Vamos lá... (baseado na variável acima).
+```javascript
+for(let chave in pessoa){
+    console.log(pessoa['nome']);
+    break;
+}
+// > Lohan
+```
+Assim, esse laço é mais utilizado em blocos/objetos. No exemplo, criamos um bloco _pessoa_, onde seus _key: value_ estão presentes.<br>Podemos acessá-los facilmente com o _for in._ A variável _chave_ está buscando a(s) propriedade(s) do objeto, uma propriedade diferente do bloco é atribuida à cada iteração.
+## - `for of`
+```javascript
+    let pacientes = ['Letícia', 'André', 'João', 'César'];
+    for(index of pacientes){
+        console.log(index);
+    }
+// > Letícia
+// > André
+// > João
+// > César
+```
+O array _pacientes_ criado é iterado atráves da variável 'index', que é alterada a cada loop. Mostrando o valor de cada índice do array até o seu fim.

@@ -42,6 +42,19 @@ console.log('testando...')
 
 Como podemos ver, o teste retornou certinho.
 
+# Objeto
+
+São estruturas que nos permite armazenar dados em formato _key: value_, separadas por vírgula e entre `{}`, onde as chaves são sempre `strings` e os valores associados à elas, podem ser de qualquer tipo.
+```javascript
+    let pessoa = {
+        nome: "Letícia",
+        idade: 21,
+        branca: false
+    }
+    console.log('Olá, meu nome é' + " " + pessoa.nome)
+// > Olá, meu nome é Letícia
+```
+
 # Variáveis
 
 Existem 3 tipos de variáveis para a declaração de atribuições no JS. Sendo elas: **var**, **let** e **const**. E para tratarmos desse assunto, devemos falar do _ESCOPO_, que se refere a visibilidade e acessibilidade de variáveis e outros...<br>O escopo define as áreas onde essas entidades são válidas.
